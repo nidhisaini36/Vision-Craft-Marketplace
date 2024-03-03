@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
-import { isLoggedIn } from "../../../src/helpers/IsLoggedIn";
+import { isLoggedIn } from "../../helpers/IsLoggedIn";
 import { Logout } from "../../services/Services";
 import routes from "routes.js";
 import avatar from "../../assets/img/default-avatar.png";
-import DisplayCategories from "../../views/pages/category/DisplayCategories";
+import { DisplayCategories } from "./DisplayCategories"; // Import DisplayCategories component
 
 const Header = () => {
   const location = useLocation();
@@ -124,8 +124,6 @@ const Header = () => {
                 <span className="d-lg-block"> Search</span>
               </Nav.Link>
             </Nav.Item>
-            
-            <DisplayCategories />
           </Nav>
           <Nav className="ml-auto" navbar>
             {/* <Nav.Item>
@@ -207,7 +205,7 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
       </Container>
-     
+      <DisplayCategories />
     </Navbar>
   );
 };
